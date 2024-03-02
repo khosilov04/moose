@@ -17,10 +17,12 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='posts/')
     description = RichTextField()
+
     author = models.CharField(max_length=50)
     job_title = models.CharField(max_length=60)
     author_image = models.ImageField(upload_to='author_images/', blank=True, null=True)
 
+    view_count = models.IntegerField(default=0)
     is_published = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
