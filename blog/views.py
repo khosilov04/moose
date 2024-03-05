@@ -23,7 +23,7 @@ def blog_view(request):
     posts = Post.objects.filter(is_published=True)
     page_obj = Paginator(posts, 2)
 
-    return render(request, 'blog.html', {'blog': 'active', 'posts' : page_obj.get_page(page)})
+    return render(request, 'blog.html', {'blog': 'active', 'posts': page_obj.get_page(page)})
 
 
 def blog_detail_view(request, pk):
@@ -36,7 +36,7 @@ def blog_detail_view(request, pk):
     post.view_count += 1
     post.save(update_fields=['view_count'])
     comments = Comment.objects.filter(post_id=pk)
-    return render(request,'blog-single.html', {'comments': comments, 'post': post, 'blog': 'active'})
+    return render(request, 'blog-single.html', {'comments': comments, 'post': post, 'blog': 'active'})
 
 
 def about_view(request):

@@ -34,8 +34,8 @@
     <div class="container-fluid px-md-4">
         <div class="row no-gutters">
             {% for post in posts %}
-                {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-md-12 blog-wrap bg-darken">
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-md-12 blog-wrap bg-darken">
                 <div class="row no-gutters align-items-center">
                     <div class="col-md-6 img img-blog js-fullheight order-md-last"
                          style="background-image: url({{ post.image.url }});">
@@ -60,8 +60,8 @@
                     </div>
                 </div>
             </div>
-                {% else %}
-                    <div class="col-md-12 blog-wrap">
+            {% else %}
+            <div class="col-md-12 blog-wrap">
                 <div class="row no-gutters align-items-center">
                     <div class="col-md-6 img img-blog js-fullheight"
                          style="background-image: url({{ post.image.url }});">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-                {% endif %}
+            {% endif %}
             {% endfor %}
         </div>
         <div class="row py-5">
