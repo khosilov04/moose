@@ -3,9 +3,11 @@ from .models import Post, Contact, Comment, Category
 from datetime import datetime
 from django.utils.html import format_html
 
+
 class CommentInline(admin.TabularInline):
     model = Comment
     extra = 0
+
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
@@ -22,20 +24,24 @@ class ContactAdmin(admin.ModelAdmin):
             color = 'green'
         return format_html("<div style='color: {}'>{}</div>", color, days_diff)
 
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'preview_image', 'author', 'category', 'is_published', 'view_count', 'created_at')
     list_display_links = ('id', 'title')
-    inlines = (CommentInline, )
+    inlines = (CommentInline,)
     search_fields = ('title', 'author')
     list_filter = ('author', 'is_published')
 
     def preview_image(self, obj):
         return format_html("<img height=30 src={}>", obj.image.url)
+
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name',  'email', 'is_visible', 'created_at')
+    list_display = ('id', 'name', 'email', 'is_visible', 'created_at')
     list_display_links = ('id', 'name')
+
 
 class PostInline(admin.TabularInline):
     model = Post
@@ -47,7 +53,7 @@ class PostInline(admin.TabularInline):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'created_at')
     list_display_links = ('id', 'name')
-    inlines = (PostInline, )
+    inlines = (PostInline,)
 
 # admin.site.register(Post, PostAdmin)
 # admin.site.register(Contact, ContactAdmin)
