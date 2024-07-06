@@ -197,8 +197,8 @@ CKEDITOR_CONFIGS = {
 }
 
 if DEBUG is True:
-    AWS_ACCESS_KEY_ID = '1'
-    AWS_SECRET_ACCESS_KEY = 'DO00QFKKECEJ66ABV9GD'
+    AWS_ACCESS_KEY_ID = 'DO00QFKKECEJ66ABV9GD'
+    AWS_SECRET_ACCESS_KEY = 'DynSRfM4nLPmigZxiw07x2tw0nt9omPeSuhtGUUHrL8'
     AWS_STORAGE_BUCKET_NAME = 'diyerbek_moose'
     AWS_S3_ENDPOINT_URL = 'portfolioscdn.blr1.digitaloceanspaces.com'
     AWS_S3_CUSTOM_DOMAIN = 'https://portfolioscdn.blr1.digitaloceanspaces.com' + AWS_STORAGE_BUCKET_NAME
