@@ -190,3 +190,18 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+if DEBUG is True:
+    AWS_ACCESS_KEY_ID = '1'
+    AWS_SECRET_ACCESS_KEY = 'DO00QFKKECEJ66ABV9GD'
+    AWS_STORAGE_BUCKET_NAME = 'diyerbek_moose'
+    AWS_S3_ENDPOINT_URL = 'portfolioscdn.blr1.digitaloceanspaces.com'
+    AWS_S3_CUSTOM_DOMAIN = 'https://portfolioscdn.blr1.digitaloceanspaces.com' + AWS_STORAGE_BUCKET_NAME
+
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+        'ACL': 'public-read'
+    }
+
+    # Media files configuration
+    DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
