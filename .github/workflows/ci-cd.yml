@@ -30,7 +30,7 @@ jobs:
     needs: build
 
     steps:
-      - name: Deploy to Development Server
+      - name: Deploy to Master Server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           HOST: ${{ secrets.HOST }}
