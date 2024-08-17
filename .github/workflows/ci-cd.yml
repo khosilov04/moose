@@ -44,7 +44,7 @@ jobs:
 
           ssh root@$HOST << 'EOF'
             set -e
-            cd /root/CRM_BACKEND/fsp-crm-backend
+            cd /root/Diyorbek/moose
             git pull
             sudo systemctl restart cr_m.service
             sudo systemctl status cr_m.service
